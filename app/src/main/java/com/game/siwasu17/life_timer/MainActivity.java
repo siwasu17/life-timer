@@ -5,18 +5,25 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.jakewharton.threetenabp.AndroidThreeTen;
+
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneId;
+import org.threeten.bp.ZonedDateTime;
+
 
 public class MainActivity extends ActionBarActivity {
 
-    private TextView clockTextView;
     private Handler clockUpdateHandler;
-    private int counter = 0;
     private int UPDATE_MSEC = 1000;
-    
+    //何歳まで生きる？
+    private int end_age = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Java8の日時系を使うためのBackportライブラリを使う
+        AndroidThreeTen.init(this);
         setContentView(R.layout.activity_main);
 
         clockUpdateHandler = new Handler();
@@ -25,13 +32,14 @@ public class MainActivity extends ActionBarActivity {
         clockUpdateHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                counter++;
+                // 現在日時
+                ZonedDateTime nowZonedDt = Instant.now().atZone(ZoneId.of("Asia/Tokyo"));
                 TextView clock = (TextView) findViewById(R.id.clock);
-                clock.setText(counter+"");
+                clock.setText(nowZonedDt.toString());
                 //clockTextView.setText(counter);
-                clockUpdateHandler.postDelayed(this,UPDATE_MSEC);
+                clockUpdateHandler.postDelayed(this, UPDATE_MSEC);
             }
-        },UPDATE_MSEC);
+        }, UPDATE_MSEC);
 
     }
 }
