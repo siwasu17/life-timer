@@ -1,8 +1,11 @@
 package com.game.siwasu17.life_timer;
 
+import android.content.Intent;
 import android.os.Handler;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.jakewharton.threetenabp.AndroidThreeTen;
@@ -32,10 +35,23 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Java8の日時系を使うためのBackportライブラリを使う
-        AndroidThreeTen.init(this);
         setContentView(R.layout.activity_main);
 
+        //設定用FABを押した時の動作
+        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Preferenceを開く
+                Intent intent = new Intent();
+                //渡されてくるViewのContext取るのに注意
+                intent.setClass(v.getContext(), LifeSettingPrefActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //Java8の日時系を使うためのBackportライブラリを使う
+        AndroidThreeTen.init(this);
         clockUpdateHandler = new Handler();
         //UIスレッド外から画面操作するためのハンドラ
         //時間を更新するため

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_title">
+        <EditTextPreference
+            android:key="birth_year"
+            android:title="年"
+            android:summary="生まれた年"
+            android:dialogTitle="生まれた年は？"
+            >
+        </EditTextPreference>
+
+    </PreferenceCategory>
+</PreferenceScreen>

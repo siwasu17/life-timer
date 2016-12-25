@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">life-timer</string>
+    <string name="pref_title">生年月日の設定</string>
 </resources>
