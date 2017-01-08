@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/pref_end_age_title">
+        <com.vanniktech.vntnumberpickerpreference.VNTNumberPickerPreference
+            android:defaultValue="80"
+            android:key="key_end_age"
+            android:title="何歳まで？"
+            app:vnt_maxValue="120"
+            app:vnt_minValue="1" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_birth_title">
+        <com.vanniktech.vntnumberpickerpreference.VNTNumberPickerPreference
+            android:defaultValue="2000"
+            android:key="key_birth_year"
+            android:title="生まれた年"
+            app:vnt_maxValue="2100"
+            app:vnt_minValue="1900" />
+
+        <com.vanniktech.vntnumberpickerpreference.VNTNumberPickerPreference
+            android:defaultValue="1"
+            android:key="key_birth_month"
+            android:title="生まれた月"
+            app:vnt_maxValue="12"
+            app:vnt_minValue="1" />
+
+        <com.vanniktech.vntnumberpickerpreference.VNTNumberPickerPreference
+            android:defaultValue="1"
+            android:key="key_birth_day"
+            android:title="生まれた日"
+            app:vnt_maxValue="31"
+            app:vnt_minValue="1" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
