@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">life-timer</string>
     <string name="pref_birth_title">生年月日</string>
-    <string name="pref_limit_age_title">寿命</string>
+    <string name="pref_end_age_title">寿命</string>
 </resources>

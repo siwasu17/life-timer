@@ -2,10 +2,10 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
                   xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory android:title="@string/pref_limit_age_title">
+    <PreferenceCategory android:title="@string/pref_end_age_title">
         <com.vanniktech.vntnumberpickerpreference.VNTNumberPickerPreference
             android:defaultValue="80"
-            android:key="key_limit_age"
+            android:key="key_end_age"
             android:title="何歳まで？"
             app:vnt_maxValue="120"
             app:vnt_minValue="1" />
