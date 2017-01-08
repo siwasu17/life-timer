@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.preference.PreferenceFragment;
 
 /**
- * Created by yasu on 2016/12/26.
+ * 設定をxmlと連動して保存するパーツ
  */
 public class LifeSettingPrefFragment extends PreferenceFragment{
     @Override

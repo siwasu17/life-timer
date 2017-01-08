@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
 /**
- * Created by yasu on 2016/12/26.
+ * 設定画面用Activity
  */
 public class LifeSettingPrefActivity extends PreferenceActivity {
     @Override
