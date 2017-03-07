@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
@@ -8,6 +9,7 @@
               android:paddingLeft="@dimen/activity_vertical_margin"
               android:paddingRight="@dimen/activity_vertical_margin"
               android:paddingTop="@dimen/activity_horizontal_margin"
+              android:background="@drawable/candle"
               tools:context=".MainActivity" >
 
     <LinearLayout
@@ -18,7 +20,9 @@
             android:id="@+id/end_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="36sp"/>
+            android:textSize="36sp"
+            android:textColor="@android:color/white"
+            />
 
         <TextView
             android:id="@+id/msg_saimade"
@@ -26,27 +30,32 @@
             android:layout_height="wrap_content"
             android:text="才まで"
             android:textSize="30sp"
-
+            android:textColor="@android:color/white"
             />
     </LinearLayout>
 
     <TextView
         android:id="@+id/msg_ato"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="あと"
+        android:text="あと..."
         android:textSize="30sp"
+        android:textColor="@android:color/white"
         />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
 
         <TextView
             android:id="@+id/remaining_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="36sp"/>
+            android:textSize="50sp"
+            android:textColor="@android:color/white"
+            />
 
         <TextView
             android:id="@+id/msg_nen"
@@ -54,19 +63,23 @@
             android:layout_height="wrap_content"
             android:text="年"
             android:textSize="30sp"
-
+            android:textColor="@android:color/white"
             />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
 
         <TextView
             android:id="@+id/remaining_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="36sp"/>
+            android:textSize="50sp"
+            android:textColor="@android:color/white"
+            />
 
         <TextView
             android:id="@+id/msg_hi"
@@ -74,18 +87,23 @@
             android:layout_height="wrap_content"
             android:text="日"
             android:textSize="30sp"
+            android:textColor="@android:color/white"
             />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
 
         <TextView
             android:id="@+id/remaining_sec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="36sp"/>
+            android:textSize="50sp"
+            android:textColor="@android:color/white"
+            />
 
         <TextView
             android:id="@+id/msg_byo"
@@ -93,6 +111,7 @@
             android:layout_height="wrap_content"
             android:text="秒"
             android:textSize="30sp"
+            android:textColor="@android:color/white"
             />
     </LinearLayout>
 
@@ -103,7 +122,5 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/ic_dialog_info"
-        />
-
-
+        app:backgroundTint="@color/material_blue_grey_900"/>
  </LinearLayout>

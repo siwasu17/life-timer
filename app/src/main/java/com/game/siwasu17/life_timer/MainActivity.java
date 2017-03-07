@@ -59,11 +59,13 @@ public class MainActivity extends ActionBarActivity {
         clockUpdateHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                updateLifeTime();
-                updateDisplay();
+                update();
                 clockUpdateHandler.postDelayed(this, UPDATE_MSEC);
             }
         }, UPDATE_MSEC);
+
+        //初回の表示
+        update();
 
     }
 
@@ -102,5 +104,10 @@ public class MainActivity extends ActionBarActivity {
         yearView.setText(String.valueOf(remaining_year));
         dayView.setText(String.valueOf(remaining_day));
         secView.setText(String.valueOf(remaining_sec));
+    }
+
+    private void update(){
+        updateLifeTime();
+        updateDisplay();
     }
 }
