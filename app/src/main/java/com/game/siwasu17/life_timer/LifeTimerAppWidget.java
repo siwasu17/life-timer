@@ -33,7 +33,10 @@ public class LifeTimerAppWidget extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
-        CharSequence widgetText = context.getString(R.string.appwidget_text);
+        LifeTimeManager.updateLifeTime(context);
+        long lifeTimeSec = LifeTimeManager.getLifeTimeSec();
+
+        CharSequence widgetText = String.valueOf(lifeTimeSec);
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.life_timer_app_widget);
         views.setTextViewText(R.id.appwidget_text, widgetText);
