@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Java8の日時系を使うためのBackportライブラリを使う
         AndroidThreeTen.init(this);
+
         clockUpdateHandler = new Handler();
         //UIスレッド外から画面操作するためのハンドラ
         //時間を更新するため

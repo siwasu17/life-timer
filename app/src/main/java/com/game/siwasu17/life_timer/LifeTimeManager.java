@@ -19,7 +19,7 @@ public class LifeTimeManager {
     public static int birthMonth;
     public static int birthDay;
 
-    //設定を読み込むn
+    //設定を読み込む
     public static void updateLifeTime(Context context){
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         endAge = pref.getInt("key_end_age",100);
