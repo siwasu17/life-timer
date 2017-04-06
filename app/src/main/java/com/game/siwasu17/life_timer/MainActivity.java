@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -41,9 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        //Java8の日時系を使うためのBackportライブラリを使う
-        AndroidThreeTen.init(this);
 
         clockUpdateHandler = new Handler();
         //UIスレッド外から画面操作するためのハンドラ
@@ -80,8 +79,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void update(){
-        LifeTimeManager.updateLifeTime(this);
-        long lifeTimeSec = LifeTimeManager.getLifeTimeSec();
-        updateDisplay(LifeTimeManager.endAge,lifeTimeSec);
+        LifeTimeManager lifeTimeManager = LifeTimeManager.getInstance(this);
+        lifeTimeManager.updateLifeTime();
+        long lifeTimeSec = lifeTimeManager.getLifeTimeSec();
+        updateDisplay(lifeTimeManager.endAge,lifeTimeSec);
     }
 }
