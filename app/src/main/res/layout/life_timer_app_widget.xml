@@ -1,21 +1,28 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="@dimen/widget_margin"
-                android:background="#09C">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#AA000000"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
 
     <TextView
-        android:id="@+id/appwidget_text"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:text="あと..."
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        />
+
+    <TextView
+        android:contentDescription="@string/appwidget_text"
+        android:gravity="center_horizontal"
+        android:id="@+id/appwidget_text"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         android:text="@string/appwidget_text"
         android:textColor="#ffffff"
-        android:textSize="24sp"
-        android:textStyle="bold|italic"
-        android:layout_margin="8dp"
-        android:contentDescription="@string/appwidget_text"
-        android:background="#09C"/>
-
-</RelativeLayout>
+        android:textSize="28sp"
+        android:textStyle="bold|italic"/>
+</LinearLayout>

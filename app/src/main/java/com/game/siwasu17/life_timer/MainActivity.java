@@ -60,28 +60,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void updateDisplay(int endAge, long lifeTimeSec){
+    private void update(){
+        //設定から残り時間を算出、、表示に使う情報にパースして取得
+        LifeTimeManager lifeTimeManager = LifeTimeManager.getInstance(this);
+        LifeTimeManager.RemainingTimeSet remainingTimeSet = lifeTimeManager.getRemainingTime();
+
+        //表示
         TextView endAgeView = (TextView) findViewById(R.id.end_age);
         TextView yearView = (TextView) findViewById(R.id.remaining_year);
         TextView dayView = (TextView) findViewById(R.id.remaining_day);
         TextView secView = (TextView) findViewById(R.id.remaining_sec);
 
-        long year_long_sec = (365 * 24 * 60 * 60);
-        long day_long_sec = (24 * 60 * 60);
-        long remaining_year = lifeTimeSec / year_long_sec;
-        long remaining_day = (lifeTimeSec - (remaining_year * year_long_sec)) / day_long_sec;
-        long remaining_sec = (lifeTimeSec - (remaining_year * year_long_sec) - (remaining_day * day_long_sec));
-        //表示
-        endAgeView.setText(String.valueOf(endAge));
-        yearView.setText(String.valueOf(remaining_year));
-        dayView.setText(String.valueOf(remaining_day));
-        secView.setText(String.valueOf(remaining_sec));
-    }
+        endAgeView.setText(String.valueOf(remainingTimeSet.endAge));
+        yearView.setText(String.valueOf(remainingTimeSet.year));
+        dayView.setText(String.valueOf(remainingTimeSet.day));
+        secView.setText(String.valueOf(remainingTimeSet.sec));
 
-    private void update(){
-        LifeTimeManager lifeTimeManager = LifeTimeManager.getInstance(this);
-        lifeTimeManager.updateLifeTime();
-        long lifeTimeSec = lifeTimeManager.getLifeTimeSec();
-        updateDisplay(lifeTimeManager.endAge,lifeTimeSec);
     }
 }

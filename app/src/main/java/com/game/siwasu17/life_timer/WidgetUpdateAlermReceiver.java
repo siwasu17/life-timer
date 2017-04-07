@@ -15,12 +15,13 @@ public class WidgetUpdateAlermReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         System.err.println("Recieve");
+        //ウィジェットの画面更新
 
         LifeTimeManager lifeTimeManager = LifeTimeManager.getInstance(context);
-        lifeTimeManager.updateLifeTime();
-        long lifeTimeSec = lifeTimeManager.getLifeTimeSec();
+        LifeTimeManager.RemainingTimeSet remainingTimeSet = lifeTimeManager.getRemainingTime();
 
-        CharSequence widgetText = String.valueOf(lifeTimeSec);
+        CharSequence widgetText = String.valueOf(remainingTimeSet.year) + "年 "
+                + String.valueOf(remainingTimeSet.day) + "日";
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.life_timer_app_widget);
         views.setTextViewText(R.id.appwidget_text, widgetText);

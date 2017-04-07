@@ -35,18 +35,22 @@ public class LifeTimerAppWidget extends AppWidgetProvider {
         // Enter relevant functionality for when the first widget is created
         System.err.println("Enabled");
 
+        //アラームの設定で通常の更新インターバルよりも短い間隔で定期的に画面更新させる
+        //これをしないと最低更新間隔が30分になってしまうため
         Intent launchIntent = new Intent(context, WidgetUpdateAlermReceiver.class);
         PendingIntent mAlarmIntent = PendingIntent.getBroadcast(context, 0, launchIntent, 0);
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         long firstTime = SystemClock.elapsedRealtime();
-        long interval = 30 * 1000;
-        alarmManager.setRepeating(AlarmManager.RTC, firstTime, interval, mAlarmIntent);
+        //時間指定しているが、最速でも実際は1分とかかかる
+        alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME, firstTime, WIDGET_UPDATE_MSEC, mAlarmIntent);
     }
 
     @Override
     public void onDisabled(Context context) {
         // Enter relevant functionality for when the last widget is disabled
+
+        //アラームの停止
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent launchIntent = new Intent(context, WidgetUpdateAlermReceiver.class);
         PendingIntent mAlarmIntent = PendingIntent.getBroadcast(context, 0, launchIntent, 0);
@@ -55,17 +59,7 @@ public class LifeTimerAppWidget extends AppWidgetProvider {
     }
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
-        LifeTimeManager lifeTimeManager = LifeTimeManager.getInstance(context);
-        lifeTimeManager.updateLifeTime();
-        long lifeTimeSec = lifeTimeManager.getLifeTimeSec();
-
-        CharSequence widgetText = String.valueOf(lifeTimeSec);
-        // Construct the RemoteViews object
-        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.life_timer_app_widget);
-        views.setTextViewText(R.id.appwidget_text, widgetText);
-
-        // Instruct the widget manager to update the widget
-        appWidgetManager.updateAppWidget(appWidgetId, views);
+        //AlermReceiver側で画面更新するのでここでは何もしない
     }
 }
 
