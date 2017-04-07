@@ -1,0 +1,28 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#AA000000"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="あと..."
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        />
+
+    <TextView
+        android:contentDescription="@string/appwidget_text"
+        android:gravity="center_horizontal"
+        android:id="@+id/appwidget_text"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/appwidget_text"
+        android:textColor="#ffffff"
+        android:textSize="28sp"
+        android:textStyle="bold|italic"/>
+</LinearLayout>
