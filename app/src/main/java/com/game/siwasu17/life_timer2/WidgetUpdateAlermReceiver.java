@@ -1,11 +1,10 @@
-package com.game.siwasu17.life_timer;
+package com.game.siwasu17.life_timer2;
 
 import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.widget.RemoteViews;
 
 public class WidgetUpdateAlermReceiver extends BroadcastReceiver {

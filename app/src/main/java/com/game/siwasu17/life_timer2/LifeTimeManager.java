@@ -1,4 +1,4 @@
-package com.game.siwasu17.life_timer;
+package com.game.siwasu17.life_timer2;
 
 import android.content.Context;
 import android.content.SharedPreferences;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.game.siwasu17.life_timer" >
+    package="com.game.siwasu17.life_timer2" >
 
     <application
         android:allowBackup="true"
@@ -8,17 +8,17 @@
         android:label="人生の残り時間タイマー"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity" >
+        <activity android:name="com.game.siwasu17.life_timer2.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LifeSettingPrefActivity" >
+        <activity android:name="com.game.siwasu17.life_timer2.LifeSettingPrefActivity" >
         </activity>
 
-        <receiver android:name=".LifeTimerAppWidget" >
+        <receiver android:name="com.game.siwasu17.life_timer2.LifeTimerAppWidget" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -28,7 +28,7 @@
                 android:resource="@xml/life_timer_app_widget_info" />
         </receiver>
         <receiver
-            android:name=".WidgetUpdateAlermReceiver"
+            android:name="com.game.siwasu17.life_timer2.WidgetUpdateAlermReceiver"
             android:enabled="true"
             android:exported="true" >
         </receiver>

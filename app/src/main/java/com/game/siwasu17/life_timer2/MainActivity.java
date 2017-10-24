@@ -1,23 +1,12 @@
-package com.game.siwasu17.life_timer;
+package com.game.siwasu17.life_timer2;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Handler;
-import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-
-import com.jakewharton.threetenabp.AndroidThreeTen;
-
-import org.threeten.bp.Instant;
-import org.threeten.bp.ZoneId;
-import org.threeten.bp.ZonedDateTime;
-
-import org.threeten.bp.Duration;
 
 
 public class MainActivity extends AppCompatActivity {
