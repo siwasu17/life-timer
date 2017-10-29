@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import jp.co.yahoo.android.mobileinsight.MobileInsight;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,10 +20,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         //設定用FABを押した時の動作
-        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void update(){
+    private void update() {
         //設定から残り時間を算出、、表示に使う情報にパースして取得
         LifeTimeManager lifeTimeManager = LifeTimeManager.getInstance(this);
         LifeTimeManager.RemainingTimeSet remainingTimeSet = lifeTimeManager.getRemainingTime();
